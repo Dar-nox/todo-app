@@ -27,12 +27,11 @@ const ToDoList = () => {
     setTasks(updatedTasks);
   }
 
-  function   
+  function 
  moveTaskUp(index) {
     if (index > 0) {
       const updatedTasks = [...tasks];
-      [updatedTasks[index], updatedTasks[index - 1]] = [updatedTasks[index   
- - 1], updatedTasks[index]];
+      [updatedTasks[index], updatedTasks[index - 1]] = [updatedTasks[index - 1], updatedTasks[index]];
       setTasks(updatedTasks);
     }
   }
@@ -40,16 +39,15 @@ const ToDoList = () => {
   function moveTaskDown(index) {
     if (index < tasks.length - 1) {
       const updatedTasks = [...tasks];
-      [updatedTasks[index], updatedTasks[index   
+      [updatedTasks[index], updatedTasks[index 
  + 1]] = [updatedTasks[index + 1], updatedTasks[index]];
-      setTasks(updatedTasks);   
-
+      setTasks(updatedTasks); 
     }
   }
 
   function editTask(index) {
-    setEditingTaskIndex(index); // Set the index of the task being edited
-    setEditTasks(tasks[index]); // Set the input field value to the existing task text
+    setEditingTaskIndex(index);
+    setEditTasks(tasks[index]);
   }
 
   function saveEditedTask() {
@@ -63,8 +61,8 @@ const ToDoList = () => {
   }
 
   function cancelEdit() {
-    setEditingTaskIndex(null); // Reset the editing state
-    setEditTasks(""); // Clear the input field
+    setEditingTaskIndex(null);
+    setEditTasks("");
   }
 
   return (
@@ -77,13 +75,12 @@ const ToDoList = () => {
           value={newTask}
           onChange={handleInputChange}
         />
-        <button className="addButton"   
- onClick={addNewTask}>
+        <button className="addButton" onClick={addNewTask}>
           Add
         </button>
       </div>
 
-      {tasks.length === 0 ? ( // Check if there are any tasks
+      {tasks.length === 0 ? ( 
         <p className="emptyList">There's nothing to do. Add a task to get started!</p>
       ) : (
         <ol>
