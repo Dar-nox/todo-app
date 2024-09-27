@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ToDoList.css';
 
 const ToDoList = () => {
-  const [tasks, setTasks] = useState([{ text: "Task 1", completed: false }, { text: "Task 2", completed: false }]);
+  const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [editTasks, setEditTasks] = useState("");
   const [editingTaskIndex, setEditingTaskIndex] = useState(null);
@@ -113,16 +113,30 @@ const ToDoList = () => {
                   >
                     Complete
                   </button>
-                  <button className="deleteButton" onClick={() => deleteTask(index)}>
+                  <button
+                    className="deleteButton"
+                    onClick={() => deleteTask(index)}
+                    disabled={task.completed}
+                  >
                     Delete
                   </button>
-                  <button className="upButton" onClick={() => moveTaskUp(index)}>
+                  <button
+                    className="upButton"
+                    onClick={() => moveTaskUp(index)}
+                  >
                     Up
                   </button>
-                  <button className="downButton" onClick={() => moveTaskDown(index)}>
+                  <button
+                    className="downButton"
+                    onClick={() => moveTaskDown(index)}
+                  >
                     Down
                   </button>
-                  <button className="editButton" onClick={() => editTask(index)}>
+                  <button
+                    className="editButton"
+                    onClick={() => editTask(index)}
+                    disabled={task.completed}
+                  >
                     Edit
                   </button>
                 </>
